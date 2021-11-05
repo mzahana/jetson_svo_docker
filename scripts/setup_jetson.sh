@@ -35,14 +35,14 @@ cd $HOME/src/${PKG_NAME}/scripts
 
 
 cd $HOME/src/${PKG_NAME}/
-echo " " && echo "Building Dockerfile.vins.gpu ..." && echo " " && sleep 1
+echo " " && echo "Building Dockerfile.svo ..." && echo " " && sleep 1
 ./scripts/docker_build_svo.sh melodic
 
 echo " " && echo "Adding alias to .bashrc script ..." && echo " "
-grep -xF "alias vins_container='source \$HOME/src/jetson_vins_fusion_docker/scripts/docker_run_vins.sh'" ${HOME}/.bashrc || echo "alias vins_container='source \$HOME/src/jetson_vins_fusion_docker/scripts/docker_run_vins.sh'" >> ${HOME}/.bashrc
+grep -xF "alias svo_container='source \$HOME/src/jetson_svo_docker/scripts/docker_run_svo.sh'" ${HOME}/.bashrc || echo "alias svo_container='source \$HOME/src/jetson_svo_docker/scripts/docker_run_svo.sh'" >> ${HOME}/.bashrc
 
-echo " " && echo "#------------- You can run the VINS container from the terminal by executing vins_container -------------#" && echo " "
+echo " " && echo "#------------- You can run the svo container from the terminal by executing svo_container -------------#" && echo " "
 
 cd $HOME
 
-echo "#------------- Please reboot your Jetson before running executing the vins_container alias, for some changes to take effect -------------#" && echo "" && echo " "
+echo "#------------- Please reboot your Jetson before running executing the svo_container alias, for some changes to take effect -------------#" && echo "" && echo " "
