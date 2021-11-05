@@ -45,7 +45,7 @@ You will then want to restart the Docker service or reboot your system before pr
 
 * Once the image is built, you can verify that by listing Docker images `docker images`. You should see `mzahana:jetson_svo` availble in the listed images
 
-* An alias will be added in the `~/.bashrc` for convenience. The alias is called `svo_container`. You can simply run the VINS container by executing `svo_container` in a terminal window
+* An alias will be added in the `~/.bashrc` for convenience. The alias is called `svo_container`. You can simply run the SVO container by executing `svo_container` in a terminal window
 
 * Once the container is running, an interactive terminal inside the container can be used. 
 
