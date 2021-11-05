@@ -129,9 +129,12 @@ RUN cd $HOME/catkin_ws/ &&\
 #
 # Realsense SDK
 #
-RUN apt install -y rsync
+
 # dependencies
-RUN apt-get install -y libssl-dev freeglut3-dev libusb-1.0-0-dev pkg-config libgtk-3-dev unzip
+RUN apt-get update && apt-get install -y rsync libssl-dev freeglut3-dev libusb-1.0-0-dev pkg-config libgtk-3-dev unzip &&\
+    apt-get -y autoremove &&\
+	apt-get clean autoclean &&\
+    rm -rf /var/lib/apt/lists/*
 
 # From source
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
